@@ -1,0 +1,35 @@
+# Игнор для репозитория задания (шаблон)
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+
+# Secrets
+*.pem
+*.key
+credentials*.json
+secrets/
+
+# Data (крупные дампы не коммитить в студенческих проектах)
+*.parquet
+*.dump
+*.sql.gz
+
+# Docker / local
+.tmp/
+.cache/
