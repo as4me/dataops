@@ -11,8 +11,22 @@
 | Файл | Описание |
 |------|----------|
 | [docs/TZ.md](docs/TZ.md) | Полное техническое задание проекта |
+| [docs/DATA_SOURCES.md](docs/DATA_SOURCES.md) | Откуда брать данные: ссылки и инструкции |
 | [docs/CHECKLIST.md](docs/CHECKLIST.md) | Чеклист готовности к сдаче |
 | [docs/GRADING.md](docs/GRADING.md) | Критерии оценки (100 баллов) |
+
+---
+
+## Где взять данные
+
+| Тип | Источник | Ссылка |
+|-----|----------|--------|
+| РСУБД (основной) | Olist → PostgreSQL | [Kaggle: brazilian-ecommerce](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce) |
+| REST API | DummyJSON Products | [dummyjson.com/docs/products](https://dummyjson.com/docs/products) |
+| Файлы CSV | Возвраты (сгенерировать из Olist) | см. [DATA_SOURCES.md](docs/DATA_SOURCES.md) |
+| Доп. API | Open-Meteo (погода) | [open-meteo.com](https://open-meteo.com/) |
+
+Подробные шаги загрузки — в [docs/DATA_SOURCES.md](docs/DATA_SOURCES.md).
 
 ---
 

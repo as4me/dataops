@@ -133,15 +133,18 @@ Monitoring
 
 В проекте необходимо использовать минимум три различных типа источников.
 
+Полные ссылки, команды скачивания и схема файлов — в [DATA_SOURCES.md](DATA_SOURCES.md).
+
 ### 5.1. Основной набор данных
 
 Рекомендуемый источник:
 
 **Olist Brazilian E-Commerce Public Dataset**
 
-Открытый обезличенный набор данных интернет-магазина, содержащий информацию примерно о 100 тысячах заказов.
+- Ссылка: https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce
+- Файлы: https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce/data
 
-Датасет доступен на платформе Kaggle.
+Открытый обезличенный набор данных интернет-магазина, содержащий информацию примерно о 100 тысячах заказов.
 
 Основные сущности:
 
@@ -157,7 +160,7 @@ Monitoring
 Рекомендуется загрузить исходные таблицы Olist в PostgreSQL и далее рассматривать PostgreSQL как операционную систему интернет-магазина.
 
 ```text
-Olist Dataset
+Olist Dataset (Kaggle)
       │
       ▼
  PostgreSQL
@@ -166,11 +169,17 @@ Olist Dataset
 Data Pipeline
 ```
 
+Полный датасет в Git **не коммитить** — описать в README, откуда скачать и как загрузить.
+
 ### 5.2. REST API
 
 В качестве внешнего API рекомендуется использовать:
 
 **DummyJSON**
+
+- Документация: https://dummyjson.com/docs
+- Товары: https://dummyjson.com/products
+- С лимитом: https://dummyjson.com/products?limit=100
 
 API может использоваться как источник:
 
@@ -215,13 +224,16 @@ return_reason
 refund_amount
 ```
 
-Допускается сформировать данные о возвратах самостоятельно на основе исходного датасета.
+В Olist готовой таблицы возвратов нет — данные **сгенерировать** на основе заказов / order_items (см. [DATA_SOURCES.md](DATA_SOURCES.md)).
 
 ### 5.4. Дополнительный внешний источник
 
 Для студентов, выполняющих расширенную версию проекта, рекомендуется подключить дополнительный API.
 
 Например: **Open-Meteo**
+
+- Сайт: https://open-meteo.com/
+- Docs: https://open-meteo.com/en/docs
 
 Можно загружать:
 

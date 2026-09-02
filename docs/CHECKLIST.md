@@ -4,7 +4,7 @@
 
 ## Обязательный минимум
 
-- [ ] Минимум 3 типа источников данных (например: PostgreSQL / REST API / CSV)
+- [ ] Минимум 3 типа источников данных (например: PostgreSQL / REST API / CSV) — см. [DATA_SOURCES.md](DATA_SOURCES.md)
 - [ ] Автоматизированный Data Pipeline
 - [ ] Оркестрация (Airflow DAG или аналог)
 - [ ] Слой RAW
