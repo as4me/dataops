@@ -1,26 +1,26 @@
 # Основы DataOps
 
-Материалы дисциплины **«Основы DataOps»**: лекции и итоговое проектное задание.
+Материалы дисциплины **«Основы DataOps»**: лекции, практики и итоговое проектное задание.
 
 Студенты читают лекции здесь и реализуют практический проект в **отдельном** Git-репозитории по ТЗ.
 
 ---
 
-## Лекции
+## Лекции и практики
 
-Полная программа: [lectures/README.md](lectures/README.md)
+| # | Лекция | Практика |
+|---|--------|----------|
+| 1 | [Введение в DataOps](lectures/01-introduction-to-dataops.md) | [Практика 1](practices/01-intro-dataops.md) |
+| 2 | [Жизненный цикл данных](lectures/02-data-lifecycle.md) | [Практика 2](practices/02-data-lifecycle.md) |
+| 3 | [Data Pipelines и оркестрация](lectures/03-data-pipelines.md) | [Практика 3](practices/03-data-pipelines.md) |
+| 4 | [Data as Code и Git](lectures/04-data-as-code.md) | [Практика 4](practices/04-data-as-code.md) |
+| 5 | [CI/CD в DataOps](lectures/05-cicd.md) | [Практика 5](practices/05-cicd.md) |
+| 6 | [Data Quality](lectures/06-data-quality.md) | [Практика 6](practices/06-data-quality.md) |
+| 7 | [Observability](lectures/07-observability.md) | [Практика 7](practices/07-observability.md) |
+| 8 | [Metadata и Governance](lectures/08-metadata-governance.md) | [Практика 8](practices/08-metadata-governance.md) |
+| 9 | [DataOps в организации](lectures/09-organization.md) | [Практика 9](practices/09-organization.md) |
 
-| # | Тема |
-|---|------|
-| 1 | [Введение в DataOps](lectures/01-introduction-to-dataops.md) |
-| 2 | [Жизненный цикл данных и DataOps-процесс](lectures/02-data-lifecycle.md) |
-| 3 | [Data Pipelines и оркестрация](lectures/03-data-pipelines.md) |
-| 4 | [Data as Code и управление версиями](lectures/04-data-as-code.md) |
-| 5 | [CI/CD в DataOps](lectures/05-cicd.md) |
-| 6 | [Data Quality и автоматическое тестирование](lectures/06-data-quality.md) |
-| 7 | [Мониторинг и Data Observability](lectures/07-observability.md) |
-| 8 | [Metadata, Data Lineage и Governance](lectures/08-metadata-governance.md) |
-| 9 | [Построение DataOps в организации](lectures/09-organization.md) |
+Индексы: [lectures/](lectures/README.md) · [practices/](practices/README.md)
 
 ---
 
