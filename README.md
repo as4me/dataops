@@ -1,112 +1,76 @@
-# Основы DataOps — итоговый проект
+# Основы DataOps
 
-Репозиторий содержит **техническое задание** итогового проекта по дисциплине «Основы DataOps».
+Материалы дисциплины **«Основы DataOps»**: лекции и итоговое проектное задание.
 
-Студенты реализуют собственный проект по этому ТЗ в **отдельном** Git-репозитории.
+Студенты читают лекции здесь и реализуют практический проект в **отдельном** Git-репозитории по ТЗ.
 
 ---
 
-## Документы
+## Лекции
+
+Полная программа: [lectures/README.md](lectures/README.md)
+
+| # | Тема |
+|---|------|
+| 1 | [Введение в DataOps](lectures/01-introduction-to-dataops.md) |
+| 2 | [Жизненный цикл данных и DataOps-процесс](lectures/02-data-lifecycle.md) |
+| 3 | [Data Pipelines и оркестрация](lectures/03-data-pipelines.md) |
+| 4 | [Data as Code и управление версиями](lectures/04-data-as-code.md) |
+| 5 | [CI/CD в DataOps](lectures/05-cicd.md) |
+| 6 | [Data Quality и автоматическое тестирование](lectures/06-data-quality.md) |
+| 7 | [Мониторинг и Data Observability](lectures/07-observability.md) |
+| 8 | [Metadata, Data Lineage и Governance](lectures/08-metadata-governance.md) |
+| 9 | [Построение DataOps в организации](lectures/09-organization.md) |
+
+---
+
+## Итоговый проект
 
 | Файл | Описание |
 |------|----------|
-| [docs/TZ.md](docs/TZ.md) | Полное техническое задание проекта |
-| [docs/DATA_SOURCES.md](docs/DATA_SOURCES.md) | Откуда брать данные: ссылки и инструкции |
-| [docs/CHECKLIST.md](docs/CHECKLIST.md) | Чеклист готовности к сдаче |
+| [docs/TZ.md](docs/TZ.md) | Полное техническое задание |
+| [docs/DATA_SOURCES.md](docs/DATA_SOURCES.md) | Откуда брать данные |
+| [docs/CHECKLIST.md](docs/CHECKLIST.md) | Чеклист сдачи |
 | [docs/GRADING.md](docs/GRADING.md) | Критерии оценки (100 баллов) |
 
----
-
-## Где взять данные
+### Где взять данные
 
 | Тип | Источник | Ссылка |
 |-----|----------|--------|
-| РСУБД (основной) | Olist → PostgreSQL | [Kaggle: brazilian-ecommerce](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce) |
-| REST API | DummyJSON Products | [dummyjson.com/docs/products](https://dummyjson.com/docs/products) |
-| Файлы CSV | Возвраты (сгенерировать из Olist) | см. [DATA_SOURCES.md](docs/DATA_SOURCES.md) |
-| Доп. API | Open-Meteo (погода) | [open-meteo.com](https://open-meteo.com/) |
+| РСУБД | Olist → PostgreSQL | [Kaggle](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce) |
+| REST API | DummyJSON | [dummyjson.com/products](https://dummyjson.com/docs/products) |
+| CSV | Возвраты (генерация) | [DATA_SOURCES.md](docs/DATA_SOURCES.md) |
+| Доп. | Open-Meteo | [open-meteo.com](https://open-meteo.com/) |
 
-Подробные шаги загрузки — в [docs/DATA_SOURCES.md](docs/DATA_SOURCES.md).
+### Цель проекта
 
----
-
-## Цель проекта
-
-Спроектировать и реализовать **DataOps-платформу** для обработки и анализа данных интернет-магазина: от источников данных до аналитических витрин и мониторинга, с инженерным контуром Git → CI/CD → Testing → Deployment → Monitoring → Documentation.
-
-## Жизненный цикл данных
+DataOps-платформа для интернет-магазина:
 
 ```text
-Источники → Загрузка → Хранение → Преобразование → Контроль качества → Публикация → Мониторинг → Аналитика
+Источники → Ingestion → RAW → STAGING → CORE → MART → BI
++ Git + CI/CD + Tests + DQ + Monitoring + Lineage + Docs
 ```
 
-## Архитектура (концепт)
+### Минимум для зачёта
 
-```text
-Источники данных
-       │
-       ▼
-   Ingestion
-       │
-       ▼
-      RAW → STAGING → CORE → MART → BI / Analytics
-```
-
-DataOps-контур:
-
-```text
-Git → Pull Request → CI/CD (Code / Data / dbt Tests + Build) → Deployment → Monitoring
-```
-
-## Минимальные требования для зачёта
-
-- минимум **3** типа источников данных;
-- автоматизированный Data Pipeline + оркестрация;
-- слои **RAW** и аналитический (**MART**);
-- минимум **3** аналитические витрины;
-- минимум **10** Data Quality Tests;
-- Git, CI pipeline, базовый мониторинг;
-- Data Lineage, README, итоговый аналитический результат.
+- ≥3 типа источников, автоматизированный pipeline + оркестрация  
+- RAW + MART (≥3 витрины), ≥10 Data Quality Tests  
+- Git, CI, мониторинг, lineage, README, аналитический результат  
 
 Подробности — в [docs/TZ.md](docs/TZ.md).
 
-## Рекомендуемый стек
+### Связь лекций и этапов проекта
 
-| Обязательно | Рекомендуется |
-|-------------|----------------|
-| Git, Docker Compose, Python | ClickHouse, MinIO |
-| PostgreSQL, Apache Airflow | Apache Superset, Grafana |
-| dbt Core | Great Expectations / Soda, OpenMetadata / DataHub |
-
-## Этапы работы
-
-1. Архитектура и окружение  
-2. Источники и Ingestion  
-3. Pipeline и оркестрация  
-4. Analytics as Code и Git  
-5. CI/CD  
-6. Data Quality  
-7. Monitoring / Observability  
-8. Metadata, Lineage, Documentation  
-9. Интеграция и защита  
-
-## Что сдавать
-
-1. Git-репозиторий с исходным кодом  
-2. Инструкция запуска (воспроизводимость)  
-3. Архитектурная схема  
-4. Работающий Data Pipeline + Airflow DAG (или аналог)  
-5. dbt-проект (модели, зависимости, тесты)  
-6. Data Quality (≥ 10 тестов)  
-7. CI/CD  
-8. Monitoring  
-9. Dashboard / аналитические представления  
-10. README  
-11. Презентация  
-
-## Важно
-
-Оценивается не количество инструментов, а **системный DataOps-процесс**: как данные движутся, как ловятся ошибки, как изменения попадают в production, как воспроизводится система и откуда берётся аналитический показатель.
+| Этап проекта | Главы |
+|--------------|-------|
+| Архитектура и окружение | 1–2 |
+| Ingestion и Pipeline | 2–3 |
+| Analytics as Code и Git | 4 |
+| CI/CD | 5 |
+| Data Quality | 6 |
+| Monitoring | 7 |
+| Metadata, Lineage, Docs | 8 |
+| Защита | 9 |
 
 ---
 
