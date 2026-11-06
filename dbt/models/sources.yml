@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+  - name: ops
+    schema: ops
+    tables:
+      - name: orders
+
+  - name: raw
+    schema: raw
+    tables:
+      - name: raw_returns
