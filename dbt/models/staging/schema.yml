@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: stg_orders
+    description: "Очищенная модель заказов из операционной базы данных."
+    columns:
+      - name: order_id
+        description: "Уникальный идентификатор заказа."
+      - name: customer_id
+        description: "Идентификатор клиента, сделавшего заказ."
+      - name: order_status
+        description: "Текущий статус заказа (delivered, shipped и т.д.)."

@@ -1,0 +1,2 @@
+return_id,order_id,return_date,return_reason,refund_amount
+RET_1,60550084e6b4c0cb89a87df1f3e5ebd9,2018-02-22 18:15:12,wrong_item,12.52
